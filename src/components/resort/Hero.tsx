@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent" />
       </div>
 
-      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-4 pt-28 text-center pb-10 sm:px-6 md:pb-14 lg:px-8 lg:pb-16">
+      <div className="mx-auto flex w-full max-w-site flex-1 flex-col items-center justify-center px-4 pt-28 text-center pb-10 sm:px-6 md:pb-14 lg:px-8 lg:pb-16">
         <p className="mb-4 inline-flex items-center gap-2 text-sm font-medium tracking-wide text-white/85">
           <MapPin className="size-4" aria-hidden />
           {RESORT.location}

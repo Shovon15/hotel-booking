@@ -91,3 +91,31 @@ export const BOOKING_ANCHOR_ID = "booking";
 
 export const HERO_IMAGE =
   "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=80";
+
+/** "Looking for a beach trip?" slider on the home page. Edit freely. */
+export type BeachStay = {
+  id: string;
+  name: string;
+  kind: string;
+  location: string;
+  image: string;
+  /** Lowest nightly rate in BDT. */
+  priceFrom: number;
+  rating: number;
+  reviews: number;
+  sleeps: number;
+  tag?: string;
+};
+
+export const unsplash = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=75`;
+
+export const BEACH_STAYS: BeachStay[] = [
+  { id: "ocean-villa", name: "Ocean Front Villa", kind: "Villa", location: "Cox's Bazar", image: unsplash("1499793983690-e29da59ef1c2"), priceFrom: 28500, rating: 4.9, reviews: 128, sleeps: 6, tag: "Beachfront" },
+  { id: "sunset-suite", name: "Sunset Pool Suite", kind: "Suite", location: "Inani Beach", image: unsplash("1520250497591-112f2f40a3f4"), priceFrom: 19500, rating: 4.8, reviews: 96, sleeps: 3, tag: "Private pool" },
+  { id: "palm-room", name: "Palm Garden Room", kind: "Room", location: "Cox's Bazar", image: unsplash("1566073771259-6a8506099945"), priceFrom: 9500, rating: 4.6, reviews: 210, sleeps: 2 },
+  { id: "coral-room", name: "Coral Deluxe Room", kind: "Room", location: "Saint Martin's", image: unsplash("1582719508461-905c673771fd"), priceFrom: 11000, rating: 4.7, reviews: 74, sleeps: 2, tag: "Sea view" },
+  { id: "lagoon-villa", name: "Lagoon Family Villa", kind: "Villa", location: "Kuakata", image: unsplash("1540541338287-41700207dee6"), priceFrom: 32000, rating: 4.9, reviews: 52, sleeps: 8, tag: "Popular" },
+  { id: "dune-cottage", name: "Dune Cottage", kind: "Cottage", location: "Inani Beach", image: unsplash("1573843981267-be1999ff37cd"), priceFrom: 15500, rating: 4.5, reviews: 63, sleeps: 4 },
+  { id: "tide-suite", name: "High Tide Suite", kind: "Suite", location: "Saint Martin's", image: unsplash("1602002418082-a4443e081dd1"), priceFrom: 21500, rating: 4.8, reviews: 41, sleeps: 3 },
+  { id: "shore-villa", name: "Shoreline Pool Villa", kind: "Villa", location: "Cox's Bazar", image: unsplash("1590523277543-a94d2e4eb00b"), priceFrom: 36500, rating: 5.0, reviews: 38, sleeps: 6, tag: "Luxury" },
+];

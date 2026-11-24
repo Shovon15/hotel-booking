@@ -32,6 +32,8 @@ body {
 
 /* ---------- Resort header + booking bar ---------- */
 @theme {
+  /* Site content width (header, sections, footer). Change here to resize everything. */
+  --container-site: 88rem;
   --color-brand: #0f5c4d;
   --color-brand-dark: #0a4238;
   --color-brand-50: #eef6f3;

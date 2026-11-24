@@ -22,7 +22,7 @@ export default function Footer() {
 
   return (
     <footer className="font-resort bg-brand-dark text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:px-8 lg:py-16">
+      <div className="mx-auto grid max-w-site gap-10 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] lg:px-8 lg:py-16">
         <div>
           <Link
             href="/"
@@ -96,7 +96,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-site flex-col gap-3 px-4 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>© {year} {RESORT.name}. All rights reserved.</p>
           <ul className="flex gap-5">
             <li>
