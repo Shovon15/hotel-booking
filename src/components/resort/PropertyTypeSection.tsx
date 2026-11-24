@@ -9,7 +9,6 @@ import {
   propertyTypeHref,
   type PropertyType,
 } from "@/config/propertyTypes";
-import { unsplash } from "@/config/resort";
 import { plural } from "./lib/format";
 
 // Narrower tiles than the beach-trip cards, so more types fit on screen.
@@ -32,7 +31,7 @@ function PropertyTypeTile({
       className="group relative block aspect-[3/4] overflow-hidden rounded-3xl bg-brand-dark shadow-[0_18px_40px_-22px_rgba(10,66,56,0.6)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sand/70"
     >
       <Image
-        src={unsplash(image)}
+        src={image}
         alt=""
         fill
         unoptimized

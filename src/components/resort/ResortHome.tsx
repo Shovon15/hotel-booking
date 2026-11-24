@@ -74,7 +74,7 @@ export default function ResortHome() {
     <div className="font-resort bg-white text-slate-700">
       <Hero />
       <PropertyTypeSection />
-      <TrendingDestinations />
+      {/* <TrendingDestinations /> */}
       <OffersSection />
       <BeachTripSection />
       {/* <section id="rooms" className="mx-auto max-w-site scroll-mt-40 px-4 py-20 sm:px-6 lg:px-8 lg:py-28">

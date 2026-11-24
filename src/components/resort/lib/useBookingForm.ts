@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { BOOKING_RULES } from "@/config/resort";
-import { addDays, fromISODate, nightsBetween, plural, toISODate } from "./format";
+import { fromISODate, nightsBetween, plural, toISODate } from "./format";
 import { useTodayKey } from "./hooks";
 
 export type DateRange = { from: Date; to: Date };
@@ -92,10 +92,8 @@ export function useBookingForm() {
   const [errors, setErrors] = useState<BookingErrors>({});
   const [lastSearch, setLastSearch] = useState<BookingPayload | null>(null);
 
-  // Default: today → today + minimum stay (tomorrow with a 1-night minimum).
-  const range: DateRange | null =
-    pickedRange ??
-    (today ? { from: today, to: addDays(today, Math.max(1, BOOKING_RULES.minStayNights)) } : null);
+  // No dates by default — the guest picks check-in and check-out themselves.
+  const range: DateRange | null = pickedRange;
 
   const clearError = (field: keyof BookingErrors) =>
     setErrors((prev) => (prev[field] ? { ...prev, [field]: undefined } : prev));

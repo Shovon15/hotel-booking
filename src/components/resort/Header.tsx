@@ -4,13 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, Ticket } from "lucide-react";
-import { NAV_LINKS, RESORT, whatsappUrl, type LanguageCode } from "@/config/resort";
+import { NAV_LINKS, RESORT, whatsappUrl } from "@/config/resort";
 import { useBookNow, useScrolled } from "./lib/hooks";
 import RoomsDropdown from "./RoomsDropdown";
 import MyBookingModal from "./MyBookingModal";
 import MobileDrawer from "./MobileDrawer";
 import SectionLink from "./SectionLink";
-import { LanguageToggle, WhatsAppIcon } from "./ui";
+import { WhatsAppIcon } from "./ui";
 import { cn } from "./lib/cn";
 
 /**
@@ -20,7 +20,6 @@ import { cn } from "./lib/cn";
 export default function Header() {
   const isHome = usePathname() === "/";
   const scrolled = useScrolled(8);
-  const [lang, setLang] = useState<LanguageCode>("en");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const bookNow = useBookNow();
@@ -99,7 +98,14 @@ export default function Header() {
             >
               <WhatsAppIcon className="size-5" />
             </a>
-            <LanguageToggle value={lang} onChange={setLang} tone={tone} className="hidden md:inline-flex" />
+            {/* Decorative divider between the contact icons and the booking actions. */}
+            <span
+              aria-hidden
+              className={cn(
+                "mx-1.5 hidden h-7 w-px bg-gradient-to-b from-transparent to-transparent transition-colors duration-200 md:block",
+                solid ? "via-slate-300" : "via-white/50",
+              )}
+            />
             <button
               type="button"
               aria-haspopup="dialog"
@@ -137,8 +143,6 @@ export default function Header() {
       <MobileDrawer
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        lang={lang}
-        onLangChange={setLang}
         onMyBooking={() => {
           setDrawerOpen(false);
           setBookingOpen(true);

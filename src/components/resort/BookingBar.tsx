@@ -105,7 +105,7 @@ export default function BookingBar() {
         <div
           className={cn(
             stuck
-              ? "fixed inset-x-0 top-16 z-40 border-b border-slate-200/80 bg-white/95 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.25)] backdrop-blur-md animate-[resort-slide-down_200ms_ease-out] md:top-20"
+              ? "fixed inset-x-0 top-16 z-40 border-b border-slate-200/80 bg-white shadow-[0_8px_24px_-12px_rgba(15,23,42,0.25)] animate-[resort-slide-down_200ms_ease-out] md:top-20"
               : "relative",
           )}
         >

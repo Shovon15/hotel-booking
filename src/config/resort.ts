@@ -90,7 +90,7 @@ export const HEADER_HEIGHT = { mobile: 64, desktop: 80 };
 export const BOOKING_ANCHOR_ID = "booking";
 
 export const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2400&q=80";
+  "https://plus.unsplash.com/premium_photo-1675745330148-1f7e5a7674a5?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D";
 
 /** "Looking for a beach trip?" slider on the home page. Edit freely. */
 export type BeachStay = {

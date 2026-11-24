@@ -63,6 +63,36 @@ body {
     opacity: 1;
   }
 }
+/* Hero: slow zoom-out on the photo, staggered rise for the text, idle float for glass cards. */
+@keyframes resort-hero-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes resort-rise {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+@keyframes resort-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   [class*="animate-[resort-"] {
     animation: none !important;

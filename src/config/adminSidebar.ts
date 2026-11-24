@@ -10,6 +10,7 @@ import {
   BedDouble,
   CalendarCheck,
   LayoutDashboard,
+  Layers,
   MessageSquareQuote,
   Settings,
   TicketPercent,
@@ -50,6 +51,7 @@ export const ADMIN_NAV: AdminNavGroup[] = [
     items: [
       { label: "Bookings", href: "/admin/bookings", icon: CalendarCheck, badge: 12 },
       { label: "Rooms & Villas", href: "/admin/rooms", icon: BedDouble },
+      { label: "Categories", href: "/admin/categories", icon: Layers },
       { label: "Guests", href: "/admin/guests", icon: Users },
     ],
   },

@@ -186,7 +186,7 @@ export default function OffersSection() {
     <section
       id="offers"
       aria-labelledby="offers-title"
-      className="relative isolate scroll-mt-40 overflow-hidden bg-brand-dark"
+      className="relative isolate scroll-mt-40 overflow-hidden bg-brand-dark lg:py-20"
     >
       {/* Decorative glows + dotted texture */}
       <div

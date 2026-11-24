@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Phone, SlidersHorizontal } from "lucide-react";
 import { PROPERTY_TYPES, getPropertyType, propertyTypeHref } from "@/config/propertyTypes";
-import { RESORT, unsplash, whatsappUrl } from "@/config/resort";
+import { RESORT, whatsappUrl } from "@/config/resort";
 import StayCard from "@/components/resort/StayCard";
 import { WhatsAppIcon } from "@/components/resort/ui";
 import { cn } from "@/components/resort/lib/cn";
@@ -25,10 +25,10 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
   const avgRating = listings.reduce((sum, l) => sum + l.rating, 0) / listings.length;
 
   return (
-    <div className="font-resort bg-white pt-16 text-slate-700 md:pt-20">
+    <div className="font-resort bg-white text-slate-700">
       {/* Banner */}
       <section className="relative isolate overflow-hidden bg-brand-dark">
-        <Image src={unsplash(image)} alt="" fill priority unoptimized sizes="100vw" className="-z-10 object-cover opacity-45" />
+        <Image src={image} alt="" fill priority unoptimized sizes="100vw" className="-z-10 object-cover opacity-45" />
         <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-brand-dark/20" />
 
         <div className="mx-auto max-w-site px-4 py-14 sm:px-6 md:py-20 lg:px-8">

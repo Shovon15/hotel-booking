@@ -2,10 +2,10 @@
 
 import { useId, useRef, useState } from "react";
 import { ChevronDown, Phone, Ticket, X } from "lucide-react";
-import { NAV_LINKS, RESORT, ROOMS, whatsappUrl, type LanguageCode } from "@/config/resort";
+import { NAV_LINKS, RESORT, ROOMS, whatsappUrl } from "@/config/resort";
 import { formatBDT } from "./lib/format";
 import { useFocusTrap, useScrollLock } from "./lib/hooks";
-import { LanguageToggle, WhatsAppIcon } from "./ui";
+import { WhatsAppIcon } from "./ui";
 import SectionLink from "./SectionLink";
 import { cn } from "./lib/cn";
 
@@ -13,15 +13,11 @@ import { cn } from "./lib/cn";
 export default function MobileDrawer({
   open,
   onClose,
-  lang,
-  onLangChange,
   onMyBooking,
   onBookNow,
 }: {
   open: boolean;
   onClose: () => void;
-  lang: LanguageCode;
-  onLangChange: (code: LanguageCode) => void;
   onMyBooking: () => void;
   onBookNow: () => void;
 }) {
@@ -127,10 +123,6 @@ export default function MobileDrawer({
           </ul>
 
           <div className="mt-6 space-y-3 border-t border-slate-100 px-1 pt-6">
-            <div className="flex items-center justify-between px-3">
-              <span className="text-sm font-medium text-slate-600">Language</span>
-              <LanguageToggle value={lang} onChange={onLangChange} />
-            </div>
             <button
               type="button"
               onClick={onMyBooking}
