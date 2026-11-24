@@ -1,8 +1,8 @@
 "use client"; // Error boundaries must be Client Components
 
 import { useEffect } from "react";
+import { CloudRain } from "lucide-react";
 import StatusScreen from "@/components/common/fallback/StatusScreen";
-import PrimaryButton from "@/components/common/button/PrimaryButton";
 import routes from "@/config/routes";
 
 export default function Error({
@@ -27,19 +27,14 @@ export default function Error({
   return (
     <StatusScreen
       code="Oops"
-      badge="Something Went Wrong"
-      titleLines={["A Brushstroke Out", "Of Place"]}
-      description="An unexpected error stopped this page from loading. Please try again, or head back to the homepage."
-      actions={
-        <>
-          <PrimaryButton type="button" onClick={() => retry()} arrow>
-            Try Again
-          </PrimaryButton>
-          <PrimaryButton href={routes.home} variant="outline" arrow>
-            Back To Home
-          </PrimaryButton>
-        </>
-      }
+      icon={CloudRain}
+      badge="Something went wrong"
+      title="A little rain on your plans"
+      description="Something unexpected stopped this page from loading. Please try again — if it keeps happening, call or WhatsApp us and we'll help you book."
+      actions={[
+        { label: "Try again", onClick: () => retry() },
+        { label: "Back to home", href: routes.home, variant: "secondary" },
+      ]}
       footnote={digest ? <>Error reference: {digest}</> : undefined}
     />
   );

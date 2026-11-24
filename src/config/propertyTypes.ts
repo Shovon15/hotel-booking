@@ -67,5 +67,28 @@ export const PROPERTY_TYPES: PropertyType[] = categoriesJson.map((c) => ({
   listings: c.listings.map((l) => ({ ...l, kind: c.singular })),
 }));
 
+/** One bookable room / villa with the fields the availability page filters on. */
+export type RoomListing = BeachStay & {
+  categorySlug: string;
+  categoryName: string;
+  view: string;
+  bed: string;
+  sizeSqft: number;
+  mealPlan: string;
+  freeCancellation: boolean;
+  /** Rooms of this type still free; 0 = sold out. */
+  roomsLeft: number;
+  amenities: string[];
+};
+
+/** Every listing across all categories, flattened — used by /availability. */
+export const ALL_ROOMS: RoomListing[] = categoriesJson.flatMap((c) =>
+  c.listings.map((l) => ({ ...l, kind: c.singular, categorySlug: c.slug, categoryName: c.name })),
+);
+
 export const getPropertyType = (slug: string) => PROPERTY_TYPES.find((t) => t.slug === slug);
-export const propertyTypeHref = (slug: string) => `/stays/${slug}`;
+/** Index of every room / villa category. */
+export const STAYS_HREF = "/stays";
+export const propertyTypeHref = (slug: string) => `${STAYS_HREF}/${slug}`;
+/** Lowest nightly rate across a category's listings. */
+export const lowestPrice = (t: PropertyType) => Math.min(...t.listings.map((l) => l.priceFrom));

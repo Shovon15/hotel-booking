@@ -13,10 +13,18 @@ const findHashTarget = (hash: string) =>
     ? document.getElementById(decodeURIComponent(hash.slice(1)))
     : null;
 
-/** Smooth-scrolls to the element for `hash`. Returns false if it isn't on the page. */
+/**
+ * Smooth-scrolls to the element for `hash`. Returns false if it isn't on the page.
+ * Targets marked `data-scroll-under-header` stop just below the fixed header.
+ */
 export const scrollToHash = (hash: string, offset = 0) => {
   const target = findHashTarget(hash);
   if (!target) return false;
+  if (target.hasAttribute("data-scroll-under-header")) {
+    const header = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+    smoothScrollTo(target, { offset: offset - header, duration: 1.1 });
+    return true;
+  }
   // Offset 0 (the default): section top lands at the top of the screen.
   if (offset === 0) scrollSectionToTop(target);
   else smoothScrollTo(target, { offset, duration: 1.1 });

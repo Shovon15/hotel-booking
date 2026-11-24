@@ -17,7 +17,19 @@
         "rating": 4.7,
         "reviews": 412,
         "sleeps": 2,
-        "tag": "Best seller"
+        "tag": "Best seller",
+        "view": "Garden",
+        "bed": "King",
+        "sizeSqft": 380,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 5,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "deluxe-room-2",
@@ -27,7 +39,19 @@
         "priceFrom": 8500,
         "rating": 4.6,
         "reviews": 238,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Garden",
+        "bed": "Twin",
+        "sizeSqft": 380,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "deluxe-room-3",
@@ -38,7 +62,20 @@
         "rating": 4.8,
         "reviews": 196,
         "sleeps": 2,
-        "tag": "Pool view"
+        "tag": "Pool view",
+        "view": "Pool",
+        "bed": "King",
+        "sizeSqft": 400,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Mini bar"
+        ]
       },
       {
         "id": "deluxe-room-4",
@@ -48,7 +85,18 @@
         "priceFrom": 10500,
         "rating": 4.5,
         "reviews": 121,
-        "sleeps": 3
+        "sleeps": 3,
+        "view": "Garden",
+        "bed": "Multiple",
+        "sizeSqft": 450,
+        "mealPlan": "Room only",
+        "freeCancellation": true,
+        "roomsLeft": 4,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV"
+        ]
       }
     ]
   },
@@ -70,7 +118,21 @@
         "rating": 4.8,
         "reviews": 187,
         "sleeps": 3,
-        "tag": "Popular"
+        "tag": "Popular",
+        "view": "Pool",
+        "bed": "King",
+        "sizeSqft": 620,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Bathtub",
+          "Mini bar"
+        ]
       },
       {
         "id": "premium-suite-2",
@@ -81,7 +143,21 @@
         "rating": 4.9,
         "reviews": 92,
         "sleeps": 3,
-        "tag": "Corner view"
+        "tag": "Corner view",
+        "view": "Beach",
+        "bed": "King",
+        "sizeSqft": 680,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Bathtub",
+          "Mini bar"
+        ]
       },
       {
         "id": "premium-suite-3",
@@ -91,7 +167,20 @@
         "priceFrom": 15500,
         "rating": 4.7,
         "reviews": 104,
-        "sleeps": 3
+        "sleeps": 3,
+        "view": "Lake",
+        "bed": "King",
+        "sizeSqft": 640,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Bathtub"
+        ]
       },
       {
         "id": "premium-suite-4",
@@ -101,7 +190,21 @@
         "priceFrom": 18500,
         "rating": 4.8,
         "reviews": 66,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "City",
+        "bed": "King",
+        "sizeSqft": 600,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 0,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Bathtub",
+          "Mini bar",
+          "Coffee maker"
+        ]
       }
     ]
   },
@@ -123,7 +226,20 @@
         "rating": 4.8,
         "reviews": 143,
         "sleeps": 5,
-        "tag": "Kids stay free"
+        "tag": "Kids stay free",
+        "view": "Garden",
+        "bed": "Multiple",
+        "sizeSqft": 1200,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Kitchenette",
+          "Balcony"
+        ]
       },
       {
         "id": "family-villa-2",
@@ -134,7 +250,21 @@
         "rating": 4.9,
         "reviews": 88,
         "sleeps": 6,
-        "tag": "Lake view"
+        "tag": "Lake view",
+        "view": "Lake",
+        "bed": "Multiple",
+        "sizeSqft": 1350,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Kitchenette",
+          "Balcony",
+          "Bathtub"
+        ]
       },
       {
         "id": "family-villa-3",
@@ -144,7 +274,21 @@
         "priceFrom": 31000,
         "rating": 4.9,
         "reviews": 47,
-        "sleeps": 8
+        "sleeps": 8,
+        "view": "Beach",
+        "bed": "Multiple",
+        "sizeSqft": 1800,
+        "mealPlan": "Half board",
+        "freeCancellation": false,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Kitchenette",
+          "Private pool",
+          "Bathtub"
+        ]
       },
       {
         "id": "family-villa-4",
@@ -155,7 +299,20 @@
         "rating": 4.8,
         "reviews": 61,
         "sleeps": 6,
-        "tag": "Plunge pool"
+        "tag": "Plunge pool",
+        "view": "Garden",
+        "bed": "Multiple",
+        "sizeSqft": 1500,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Kitchenette"
+        ]
       }
     ]
   },
@@ -177,7 +334,20 @@
         "rating": 4.9,
         "reviews": 156,
         "sleeps": 2,
-        "tag": "Most romantic"
+        "tag": "Most romantic",
+        "view": "Lake",
+        "bed": "King",
+        "sizeSqft": 520,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Bathtub"
+        ]
       },
       {
         "id": "lake-view-cottage-2",
@@ -187,7 +357,19 @@
         "priceFrom": 18000,
         "rating": 4.7,
         "reviews": 73,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Lake",
+        "bed": "Twin",
+        "sizeSqft": 520,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "lake-view-cottage-3",
@@ -198,7 +380,20 @@
         "rating": 4.9,
         "reviews": 58,
         "sleeps": 2,
-        "tag": "Sunset deck"
+        "tag": "Sunset deck",
+        "view": "Lake",
+        "bed": "King",
+        "sizeSqft": 560,
+        "mealPlan": "Half board",
+        "freeCancellation": false,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Jacuzzi"
+        ]
       },
       {
         "id": "lake-view-cottage-4",
@@ -208,7 +403,20 @@
         "priceFrom": 23500,
         "rating": 4.6,
         "reviews": 41,
-        "sleeps": 4
+        "sleeps": 4,
+        "view": "Lake",
+        "bed": "Multiple",
+        "sizeSqft": 780,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 0,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Kitchenette"
+        ]
       }
     ]
   },
@@ -230,7 +438,21 @@
         "rating": 4.9,
         "reviews": 134,
         "sleeps": 2,
-        "tag": "Private jacuzzi"
+        "tag": "Private jacuzzi",
+        "view": "Beach",
+        "bed": "King",
+        "sizeSqft": 700,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Jacuzzi",
+          "Balcony",
+          "Mini bar"
+        ]
       },
       {
         "id": "honeymoon-suite-2",
@@ -241,7 +463,20 @@
         "rating": 5,
         "reviews": 77,
         "sleeps": 2,
-        "tag": "Private pool"
+        "tag": "Private pool",
+        "view": "Pool",
+        "bed": "King",
+        "sizeSqft": 760,
+        "mealPlan": "Half board",
+        "freeCancellation": false,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Mini bar"
+        ]
       },
       {
         "id": "honeymoon-suite-3",
@@ -251,7 +486,20 @@
         "priceFrom": 21500,
         "rating": 4.8,
         "reviews": 52,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Lake",
+        "bed": "King",
+        "sizeSqft": 680,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Bathtub",
+          "Balcony"
+        ]
       },
       {
         "id": "honeymoon-suite-4",
@@ -262,7 +510,21 @@
         "rating": 4.9,
         "reviews": 29,
         "sleeps": 2,
-        "tag": "Rooftop"
+        "tag": "Rooftop",
+        "view": "Beach",
+        "bed": "King",
+        "sizeSqft": 820,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Jacuzzi",
+          "Mini bar",
+          "Coffee maker"
+        ]
       }
     ]
   },
@@ -284,7 +546,21 @@
         "rating": 4.9,
         "reviews": 98,
         "sleeps": 2,
-        "tag": "Luxury"
+        "tag": "Luxury",
+        "view": "Beach",
+        "bed": "King",
+        "sizeSqft": 1100,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Bathtub",
+          "Mini bar"
+        ]
       },
       {
         "id": "pool-villa-2",
@@ -294,7 +570,21 @@
         "priceFrom": 38500,
         "rating": 4.9,
         "reviews": 64,
-        "sleeps": 4
+        "sleeps": 4,
+        "view": "Pool",
+        "bed": "Multiple",
+        "sizeSqft": 1600,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Kitchenette",
+          "Bathtub"
+        ]
       },
       {
         "id": "pool-villa-3",
@@ -305,7 +595,21 @@
         "rating": 5,
         "reviews": 37,
         "sleeps": 4,
-        "tag": "Infinity pool"
+        "tag": "Infinity pool",
+        "view": "Beach",
+        "bed": "King",
+        "sizeSqft": 1700,
+        "mealPlan": "Half board",
+        "freeCancellation": false,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Jacuzzi",
+          "Mini bar"
+        ]
       },
       {
         "id": "pool-villa-4",
@@ -315,7 +619,20 @@
         "priceFrom": 29500,
         "rating": 4.7,
         "reviews": 45,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Garden",
+        "bed": "King",
+        "sizeSqft": 1050,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Private pool",
+          "Bathtub"
+        ]
       }
     ]
   },
@@ -337,7 +654,19 @@
         "rating": 4.6,
         "reviews": 167,
         "sleeps": 3,
-        "tag": "Pet friendly"
+        "tag": "Pet friendly",
+        "view": "Garden",
+        "bed": "Queen",
+        "sizeSqft": 480,
+        "mealPlan": "Room only",
+        "freeCancellation": true,
+        "roomsLeft": 4,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "garden-bungalow-2",
@@ -347,7 +676,18 @@
         "priceFrom": 11500,
         "rating": 4.5,
         "reviews": 89,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Garden",
+        "bed": "Twin",
+        "sizeSqft": 450,
+        "mealPlan": "Room only",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV"
+        ]
       },
       {
         "id": "garden-bungalow-3",
@@ -357,7 +697,19 @@
         "priceFrom": 12500,
         "rating": 4.7,
         "reviews": 71,
-        "sleeps": 3
+        "sleeps": 3,
+        "view": "Forest",
+        "bed": "Queen",
+        "sizeSqft": 500,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "garden-bungalow-4",
@@ -367,7 +719,19 @@
         "priceFrom": 14500,
         "rating": 4.6,
         "reviews": 54,
-        "sleeps": 4
+        "sleeps": 4,
+        "view": "Garden",
+        "bed": "Multiple",
+        "sizeSqft": 700,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Kitchenette"
+        ]
       }
     ]
   },
@@ -389,7 +753,19 @@
         "rating": 4.8,
         "reviews": 112,
         "sleeps": 2,
-        "tag": "Stargazing"
+        "tag": "Stargazing",
+        "view": "Forest",
+        "bed": "Queen",
+        "sizeSqft": 350,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "tree-house-2",
@@ -399,7 +775,19 @@
         "priceFrom": 13500,
         "rating": 4.6,
         "reviews": 58,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Forest",
+        "bed": "Twin",
+        "sizeSqft": 350,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "tree-house-3",
@@ -410,7 +798,19 @@
         "rating": 4.7,
         "reviews": 44,
         "sleeps": 4,
-        "tag": "Rope bridge"
+        "tag": "Rope bridge",
+        "view": "Forest",
+        "bed": "Multiple",
+        "sizeSqft": 560,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 1,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony"
+        ]
       },
       {
         "id": "tree-house-4",
@@ -420,7 +820,20 @@
         "priceFrom": 15000,
         "rating": 4.8,
         "reviews": 36,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Beach",
+        "bed": "Queen",
+        "sizeSqft": 380,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 0,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Balcony",
+          "Coffee maker"
+        ]
       }
     ]
   },
@@ -442,7 +855,16 @@
         "rating": 4.7,
         "reviews": 146,
         "sleeps": 2,
-        "tag": "Campfire nights"
+        "tag": "Campfire nights",
+        "view": "Forest",
+        "bed": "Queen",
+        "sizeSqft": 300,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 4,
+        "amenities": [
+          "Free Wi-Fi"
+        ]
       },
       {
         "id": "glamping-tent-2",
@@ -452,7 +874,16 @@
         "priceFrom": 9500,
         "rating": 4.6,
         "reviews": 63,
-        "sleeps": 4
+        "sleeps": 4,
+        "view": "Forest",
+        "bed": "Multiple",
+        "sizeSqft": 420,
+        "mealPlan": "Half board",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi"
+        ]
       },
       {
         "id": "glamping-tent-3",
@@ -463,7 +894,16 @@
         "rating": 4.8,
         "reviews": 49,
         "sleeps": 2,
-        "tag": "Sky view"
+        "tag": "Sky view",
+        "view": "Hill",
+        "bed": "Queen",
+        "sizeSqft": 280,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi"
+        ]
       },
       {
         "id": "glamping-tent-4",
@@ -473,7 +913,16 @@
         "priceFrom": 7000,
         "rating": 4.5,
         "reviews": 38,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Lake",
+        "bed": "Queen",
+        "sizeSqft": 260,
+        "mealPlan": "Room only",
+        "freeCancellation": true,
+        "roomsLeft": 5,
+        "amenities": [
+          "Free Wi-Fi"
+        ]
       }
     ]
   },
@@ -495,7 +944,20 @@
         "rating": 4.7,
         "reviews": 178,
         "sleeps": 2,
-        "tag": "Lounge access"
+        "tag": "Lounge access",
+        "view": "City",
+        "bed": "King",
+        "sizeSqft": 420,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 4,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Mini bar",
+          "Coffee maker"
+        ]
       },
       {
         "id": "executive-room-2",
@@ -505,7 +967,20 @@
         "priceFrom": 12000,
         "rating": 4.5,
         "reviews": 84,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "City",
+        "bed": "Twin",
+        "sizeSqft": 420,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": true,
+        "roomsLeft": 3,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Mini bar",
+          "Coffee maker"
+        ]
       },
       {
         "id": "executive-room-3",
@@ -515,7 +990,21 @@
         "priceFrom": 13500,
         "rating": 4.8,
         "reviews": 66,
-        "sleeps": 2
+        "sleeps": 2,
+        "view": "Lake",
+        "bed": "King",
+        "sizeSqft": 440,
+        "mealPlan": "Breakfast included",
+        "freeCancellation": false,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Mini bar",
+          "Coffee maker",
+          "Balcony"
+        ]
       },
       {
         "id": "executive-room-4",
@@ -526,7 +1015,20 @@
         "rating": 4.6,
         "reviews": 41,
         "sleeps": 2,
-        "tag": "Kitchenette"
+        "tag": "Kitchenette",
+        "view": "City",
+        "bed": "King",
+        "sizeSqft": 520,
+        "mealPlan": "Room only",
+        "freeCancellation": true,
+        "roomsLeft": 2,
+        "amenities": [
+          "Free Wi-Fi",
+          "Air conditioning",
+          "Smart TV",
+          "Kitchenette",
+          "Coffee maker"
+        ]
       }
     ]
   }

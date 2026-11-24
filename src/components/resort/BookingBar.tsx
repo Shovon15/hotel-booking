@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { CalendarDays, CircleCheckBig, Search } from "lucide-react";
 import { BOOKING_ANCHOR_ID } from "@/config/resort";
 import { formatCompactRange, formatShortDate, nightsBetween, plural } from "./lib/format";
@@ -31,7 +31,7 @@ function SearchSummary({ search }: { search: BookingPayload }) {
       <CircleCheckBig className="size-4 shrink-0" aria-hidden />
       <span>
         Checking {plural(search.nights, "night", "nights")} for {plural(guests, "guest", "guests")}
-        {search.promoCode ? ` with code ${search.promoCode}` : ""}… (payload logged to the console)
+        {search.promoCode ? ` with code ${search.promoCode}` : ""}…
       </span>
     </p>
   );
@@ -46,17 +46,44 @@ export default function BookingBar() {
   const form = useBookingForm();
   const [sheetOpen, setSheetOpen] = useState(false);
   const [highlight, setHighlight] = useState(false);
-  const [slotHeight, setSlotHeight] = useState<number>();
   const slotRef = useRef<HTMLDivElement>(null);
   const dateTriggerRef = useRef<HTMLButtonElement>(null);
   const highlightTimer = useRef<number | undefined>(undefined);
   const stuck = useStuckUnderHeader(slotRef);
 
-  // Remember the in-hero height so the page doesn't jump when the bar pins.
+  /**
+   * Keep the bar's in-hero space reserved while it is pinned, so pinning never moves anything.
+   *
+   * Why this matters: the hero centres its content vertically, so if the slot's
+   * height changed when the bar pinned, the slot itself would move. Its new
+   * position would flip `stuck` back, which changes the height again, and so on.
+   * useSyncExternalStore re-renders synchronously on every flip, so React bails
+   * out with "Maximum update depth exceeded". (The old code reserved a height
+   * from React state set by a ResizeObserver, which could lag one render behind,
+   * e.g. right after a validation error made the bar taller.)
+   *
+   * So: measure the in-flow height after every un-pinned commit (layout effects
+   * run before the next render can happen) and write the reserved height straight
+   * to the DOM. No state, nothing to lag.
+   */
+  const inFlowHeight = useRef(0);
+  useLayoutEffect(() => {
+    const slot = slotRef.current;
+    if (!slot) return;
+    if (stuck) {
+      if (inFlowHeight.current > 0) slot.style.height = `${inFlowHeight.current}px`;
+    } else {
+      slot.style.height = "";
+      inFlowHeight.current = slot.getBoundingClientRect().height;
+    }
+  });
+  // Content can also resize without a render (fonts loading, window resize).
   useEffect(() => {
     const slot = slotRef.current;
     if (!slot) return;
-    const observer = new ResizeObserver(([entry]) => setSlotHeight(entry.contentRect.height));
+    const observer = new ResizeObserver(() => {
+      if (!slot.style.height) inFlowHeight.current = slot.getBoundingClientRect().height;
+    });
     observer.observe(slot);
     return () => observer.disconnect();
   }, []);
@@ -99,7 +126,6 @@ export default function BookingBar() {
       <div
         ref={slotRef}
         id={BOOKING_ANCHOR_ID}
-        style={stuck && slotHeight ? { height: slotHeight } : undefined}
         className="relative z-30"
       >
         <div

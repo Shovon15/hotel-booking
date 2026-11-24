@@ -20,6 +20,7 @@ const CALENDAR_HEIGHT = 430;
  * One picker for check-in → check-out.
  * - popover: desktop bar (two months, closes once the range is complete)
  * - inline: mobile sheet (one month, expands in place)
+ * - static: always-open calendar with check-in / check-out tiles (modify-search modal)
  */
 export default function DateRangePicker({
   id,
@@ -31,13 +32,16 @@ export default function DateRangePicker({
   triggerRef,
   highlight = false,
   compact = false,
+  months = 1,
 }: {
   id: string;
   value: DateRange | null;
   onChange: (range: DateRange) => void;
   /** null while server rendering. */
   today: Date | null;
-  variant: "popover" | "inline";
+  variant: "popover" | "inline" | "static";
+  /** Months shown side by side (static variant). */
+  months?: number;
   error?: string;
   triggerRef?: Ref<HTMLButtonElement>;
   /** Briefly ring the field (after "Book Now"). */
@@ -82,7 +86,8 @@ export default function DateRangePicker({
       return;
     }
     onChange({ from: draft.from, to: day });
-    close(true);
+    if (variant === "static") setDraft(null);
+    else close(true);
   };
 
   const disabled: Matcher[] = [];
@@ -118,11 +123,44 @@ export default function DateRangePicker({
         disabled={disabled}
         defaultMonth={value?.from ?? today ?? undefined}
         startMonth={today ?? undefined}
-        numberOfMonths={variant === "popover" ? 2 : 1}
+        numberOfMonths={variant === "popover" ? 2 : variant === "static" ? months : 1}
         showOutsideDays={false}
       />
     </div>
   );
+
+  if (variant === "static") {
+    const tile = (label: string, date: Date | undefined, active: boolean) => (
+      <div
+        className={cn(
+          "min-w-0 flex-1 rounded-xl px-4 py-2.5 ring-1 transition-colors",
+          active ? "bg-brand-50 ring-2 ring-brand" : "bg-slate-50 ring-slate-200",
+        )}
+      >
+        <span className="block text-[11px] font-semibold tracking-[0.08em] text-slate-500 uppercase">{label}</span>
+        <span className={cn("block truncate text-[15px] font-semibold", date ? "text-slate-900" : "text-slate-400")}>
+          {date ? formatShortDate(date) : "Add date"}
+        </span>
+      </div>
+    );
+    const checkIn = draft?.from ?? value?.from;
+    const checkOut = draft ? undefined : value?.to;
+    return (
+      <div ref={rootRef} id={`${id}-trigger`} tabIndex={-1} aria-describedby={error ? errorId : undefined} className="focus:outline-none">
+        <div className="flex items-center gap-2">
+          {tile("Check-in", checkIn, !draft)}
+          <span aria-hidden className="shrink-0 text-xs font-semibold text-slate-400">
+            {nights > 0 && !draft ? plural(nights, "night", "nights") : "→"}
+          </span>
+          {tile("Check-out", checkOut, !!draft)}
+        </div>
+        <FieldError id={errorId} message={error} />
+        <div id={panelId} className="mt-4">
+          {calendar}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={rootRef} className="relative">

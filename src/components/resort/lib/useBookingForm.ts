@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { BOOKING_RULES } from "@/config/resort";
 import { fromISODate, nightsBetween, plural, toISODate } from "./format";
 import { useTodayKey } from "./hooks";
+import { availabilityHref } from "./availability";
 
 export type DateRange = { from: Date; to: Date };
 
@@ -76,23 +78,28 @@ export function validateBooking(
   return errors;
 }
 
-/** Shared state for the desktop booking bar and the mobile sheet. */
-export function useBookingForm() {
+export type BookingFormInitial = { range?: DateRange | null; guests?: Guests; promo?: string };
+
+/** Shared state for the desktop booking bar, the mobile sheet and the modify-search modal. */
+export function useBookingForm(initial: BookingFormInitial = {}) {
+  const router = useRouter();
   const todayKey = useTodayKey();
   const today = todayKey ? fromISODate(todayKey) : null;
 
-  const [pickedRange, setPickedRange] = useState<DateRange | null>(null);
-  const [guests, setGuestsState] = useState<Guests>({
-    adults: BOOKING_RULES.adults.default,
-    childAges: [],
-    rooms: BOOKING_RULES.rooms.default,
-  });
-  const [promo, setPromoState] = useState("");
-  const [promoOpen, setPromoOpen] = useState(false);
+  const [pickedRange, setPickedRange] = useState<DateRange | null>(initial.range ?? null);
+  const [guests, setGuestsState] = useState<Guests>(
+    initial.guests ?? {
+      adults: BOOKING_RULES.adults.default,
+      childAges: [],
+      rooms: BOOKING_RULES.rooms.default,
+    },
+  );
+  const [promo, setPromoState] = useState(initial.promo ?? "");
+  const [promoOpen, setPromoOpen] = useState(!!initial.promo);
   const [errors, setErrors] = useState<BookingErrors>({});
   const [lastSearch, setLastSearch] = useState<BookingPayload | null>(null);
 
-  // No dates by default — the guest picks check-in and check-out themselves.
+  // No dates by default (unless editing an existing search) — the guest picks them.
   const range: DateRange | null = pickedRange;
 
   const clearError = (field: keyof BookingErrors) =>
@@ -111,7 +118,7 @@ export function useBookingForm() {
     clearError("promo");
   };
 
-  /** Validates; on success logs the payload. Returns the payload or the errors. */
+  /** Validates; on success opens /availability with the search in the URL. Returns the payload or the errors. */
   const submit = (): { payload: BookingPayload | null; errors: BookingErrors } => {
     const found = validateBooking(range, guests, promo, today);
     setErrors(found);
@@ -128,8 +135,8 @@ export function useBookingForm() {
       rooms: guests.rooms,
       promoCode: promo.trim() || null,
     };
-    console.log("[Booking] Check availability", payload);
     setLastSearch(payload);
+    router.push(availabilityHref(payload));
     return { payload, errors: found };
   };
 

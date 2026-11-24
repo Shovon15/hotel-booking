@@ -1,26 +1,26 @@
+import type { Metadata } from "next";
+import { Compass } from "lucide-react";
 import StatusScreen from "@/components/common/fallback/StatusScreen";
-import PrimaryButton from "@/components/common/button/PrimaryButton";
 import SiteShell from "@/components/layout/SiteShell";
+import { BOOKING_ANCHOR_ID } from "@/config/resort";
 import routes from "@/config/routes";
 
-/** 404: same navy + crimson-glow backdrop as the Featured Collections section.
-    This file sits at the app root (outside the (site) group), so it adds the
-    site chrome itself. */
+export const metadata: Metadata = { title: "Page not found", robots: { index: false } };
+
+/** 404. This file sits at the app root (outside the (site) group), so it adds the site chrome itself. */
 export default function NotFound() {
   return (
     <SiteShell>
       <StatusScreen
         code="404"
-        badge="Page Not Found"
-        titleLines={["This Masterpiece Has", "Left The Gallery"]}
-        description="Sorry, the page you are looking for could not be found. It may have been moved or no longer exists."
-        actions={
-          <>
-            <PrimaryButton href={routes.home} arrow>
-              Back To Home
-            </PrimaryButton>
-          </>
-        }
+        icon={Compass}
+        badge="Page not found"
+        title="Looks like you've wandered off the trail"
+        description="The page you're looking for has moved or no longer exists. Let's get you back to the lake, the tea gardens and your next stay."
+        actions={[
+          { label: "Back to home", href: routes.home },
+          { label: "Check availability", href: `/#${BOOKING_ANCHOR_ID}`, variant: "secondary" },
+        ]}
       />
     </SiteShell>
   );

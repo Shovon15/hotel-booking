@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Phone, SlidersHorizontal } from "lucide-react";
-import { PROPERTY_TYPES, getPropertyType, propertyTypeHref } from "@/config/propertyTypes";
+import { PROPERTY_TYPES, STAYS_HREF, getPropertyType, propertyTypeHref } from "@/config/propertyTypes";
 import { RESORT, whatsappUrl } from "@/config/resort";
 import StayCard from "@/components/resort/StayCard";
 import { WhatsAppIcon } from "@/components/resort/ui";
 import { cn } from "@/components/resort/lib/cn";
 import { formatBDT, plural } from "@/components/resort/lib/format";
+
+const TYPES_ANCHOR = "property-types";
 
 /** One page per entry in PROPERTY_TYPES: /stays/hotels, /stays/villas, … */
 export const dynamicParams = false;
@@ -40,7 +42,11 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
                 </Link>
               </li>
               <ChevronRight className="size-4" aria-hidden />
-              <li>Stays</li>
+              <li>
+                <Link href={STAYS_HREF} className="hover:text-white">
+                  Rooms &amp; Villas
+                </Link>
+              </li>
               <ChevronRight className="size-4" aria-hidden />
               <li aria-current="page" className="font-medium text-white">
                 {name}
@@ -69,8 +75,8 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
         </div>
       </section>
 
-      {/* Type switcher */}
-      <div className="border-b border-slate-200 bg-white">
+      {/* Type switcher. Switching type lands here (just under the fixed header), not at the page top. */}
+      <div id={TYPES_ANCHOR} data-scroll-under-header className="border-b border-slate-200 bg-white">
         <nav aria-label="Property types" className="mx-auto max-w-site overflow-x-auto px-4 sm:px-6 lg:px-8" data-lenis-prevent>
           <ul className="flex w-max gap-2 py-4">
             {PROPERTY_TYPES.map((t) => {
@@ -79,7 +85,8 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
               return (
                 <li key={t.slug}>
                   <Link
-                    href={propertyTypeHref(t.slug)}
+                    href={`${propertyTypeHref(t.slug)}#${TYPES_ANCHOR}`}
+                    scroll={false}
                     aria-current={active ? "page" : undefined}
                     className={cn(
                       "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand",

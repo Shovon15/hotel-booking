@@ -1,8 +1,10 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import { ChevronDown, Phone, Ticket, X } from "lucide-react";
-import { NAV_LINKS, RESORT, ROOMS, whatsappUrl } from "@/config/resort";
+import Link from "next/link";
+import { ArrowRight, ChevronDown, Phone, Ticket, X } from "lucide-react";
+import { NAV_LINKS, RESORT, whatsappUrl } from "@/config/resort";
+import { PROPERTY_TYPES, STAYS_HREF, lowestPrice, propertyTypeHref } from "@/config/propertyTypes";
 import { formatBDT } from "./lib/format";
 import { useFocusTrap, useScrollLock } from "./lib/hooks";
 import { WhatsAppIcon } from "./ui";
@@ -96,20 +98,33 @@ export default function MobileDrawer({
                 )}
               >
                 <ul className="overflow-hidden">
-                  {ROOMS.map((room) => (
-                    <li key={room.id}>
-                      <SectionLink
-                        id={`room-${room.id}`}
-                        onNavigate={onClose}
-                        className="ml-4 flex min-h-11 items-center justify-between rounded-lg border-l-2 border-brand-100 px-4 text-[15px] text-slate-700 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                  {PROPERTY_TYPES.map((type) => (
+                    <li key={type.slug}>
+                      <Link
+                        href={propertyTypeHref(type.slug)}
+                        onClick={onClose}
+                        className="ml-4 flex min-h-11 items-center justify-between gap-3 rounded-lg border-l-2 border-brand-100 px-4 text-[15px] text-slate-700 hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                       >
-                        {room.name}
-                        <span className="text-xs text-slate-500">
-                          from <span className="font-semibold text-brand">{formatBDT(room.priceFrom)}</span>
+                        <span className="flex items-center gap-2.5">
+                          <type.icon className="size-4 text-brand" aria-hidden />
+                          {type.name}
                         </span>
-                      </SectionLink>
+                        <span className="shrink-0 text-xs text-slate-500">
+                          from <span className="font-semibold text-brand">{formatBDT(lowestPrice(type))}</span>
+                        </span>
+                      </Link>
                     </li>
                   ))}
+                  <li>
+                    <Link
+                      href={STAYS_HREF}
+                      onClick={onClose}
+                      className="ml-4 flex min-h-11 items-center justify-between rounded-lg border-l-2 border-brand-100 px-4 text-[15px] font-semibold text-brand hover:bg-brand-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    >
+                      View all rooms &amp; villas
+                      <ArrowRight className="size-4" aria-hidden />
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </li>
