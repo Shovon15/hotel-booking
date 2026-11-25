@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight, Phone, SlidersHorizontal } from "lucide-react";
-import { PROPERTY_TYPES, STAYS_HREF, getPropertyType, propertyTypeHref } from "@/config/propertyTypes";
+import { PROPERTY_TYPES, STAYS_HREF, getPropertyType } from "@/config/propertyTypes";
 import { RESORT, whatsappUrl } from "@/config/resort";
 import StayCard from "@/components/resort/StayCard";
+import CategoryTabs from "@/components/resort/CategoryTabs";
 import { WhatsAppIcon } from "@/components/resort/ui";
-import { cn } from "@/components/resort/lib/cn";
 import { formatBDT, plural } from "@/components/resort/lib/format";
 
 const TYPES_ANCHOR = "property-types";
@@ -30,8 +30,8 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
     <div className="font-resort bg-white text-slate-700">
       {/* Banner */}
       <section className="relative isolate overflow-hidden bg-brand-dark">
-        <Image src={image} alt="" fill priority unoptimized sizes="100vw" className="-z-10 object-cover opacity-45" />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-brand-dark/20" />
+        <Image src={image} alt="" fill priority unoptimized sizes="100vw" className="-z-10 object-cover opacity-60" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-dark via-brand-dark/60 to-brand-dark/0" />
 
         <div className="mx-auto max-w-site px-4 py-14 sm:px-6 md:py-20 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
@@ -77,32 +77,7 @@ export default async function PropertyTypePage({ params }: { params: Promise<{ t
 
       {/* Type switcher. Switching type lands here (just under the fixed header), not at the page top. */}
       <div id={TYPES_ANCHOR} data-scroll-under-header className="border-b border-slate-200 bg-white">
-        <nav aria-label="Property types" className="mx-auto max-w-site overflow-x-auto px-4 sm:px-6 lg:px-8" data-lenis-prevent>
-          <ul className="flex w-max gap-2 py-4">
-            {PROPERTY_TYPES.map((t) => {
-              const active = t.slug === type;
-              const TIcon = t.icon;
-              return (
-                <li key={t.slug}>
-                  <Link
-                    href={`${propertyTypeHref(t.slug)}#${TYPES_ANCHOR}`}
-                    scroll={false}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand",
-                      active
-                        ? "border-brand bg-brand text-white"
-                        : "border-slate-200 text-slate-700 hover:border-brand/40 hover:bg-brand-50 hover:text-brand",
-                    )}
-                  >
-                    <TIcon className="size-4" aria-hidden />
-                    {t.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <CategoryTabs activeSlug={type} anchor={TYPES_ANCHOR} />
       </div>
 
       {/* Listings */}
